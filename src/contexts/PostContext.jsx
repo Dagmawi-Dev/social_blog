@@ -1,4 +1,4 @@
-/*   // PostContext.js
+// PostContext.js
 import React, { createContext, useState, useEffect } from 'react';
 import { DUMMY_POSTS } from '../data'; // Assuming DUMMY_POSTS is your initial data
 
@@ -32,4 +32,3 @@ export const PostProvider = ({ children }) => {
     </PostContext.Provider>
   );
 };
- */

@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 
 const DeletePost = () => {
   return (
@@ -6,4 +6,4 @@ const DeletePost = () => {
   )
 }
 
-export default DeletePost */
+export default DeletePost

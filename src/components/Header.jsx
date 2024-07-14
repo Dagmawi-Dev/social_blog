@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { HiBars3 } from "react-icons/hi2";
 import { MdOutlineClose } from "react-icons/md";
 import Logout from '../pages/Logout';
-import { MdOutlineHome } from "react-icons/md";
-
 
 const Header = ({ posts }) => {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -26,7 +24,7 @@ const Header = ({ posts }) => {
     <nav>
       <div className="container nav__container">
         <Link to="/" className='nav__logo' onClick={closeNavHandler}>
-        <MdOutlineHome   className='home' />
+          <img src={Logo} alt='NavBar Logo' />
         </Link>
        
         {isNavShowing && (
