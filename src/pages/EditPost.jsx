@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DOMPurify from 'dompurify'; // Import DOMPurify for HTML sanitization
 
+/* The modules and formats objects configure the ReactQuill editor's toolbar and supported content formats. */
 const modules = {
   toolbar: [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -39,23 +40,28 @@ const POST_CATEGORIES = [
   'Weather',
 ];
 
+//. These will hold the current values of the post being edited.
 const EditPost = () => {
   const { id: postId } = useParams(); // This extracts postId from the route
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Uncategorized');
   const [description, setDescription] = useState('');
-  const [thumbnail, setThumbnail] = useState(null); // Store file object for thumbnail
+  const [thumbnail, setThumbnail] = useState(null); 
 
+
+  //declares an effect that runs when postId changes.
   useEffect(() => {
-    // Fetch existing post data based on postId from localStorage
+
+    //  fetch post data from localStorage.
     const fetchPostData = () => {
       const existingPosts = JSON.parse(localStorage.getItem('posts')) || [];
+     /*Finds the post with postId and updates component state (title, category, description, thumbnail). */
       const postToUpdate = existingPosts.find(post => post.id === postId);
+
       if (postToUpdate) {
         setTitle(postToUpdate.title);
         setCategory(postToUpdate.category);
         setDescription(postToUpdate.description);
-        // Set thumbnail URL if it exists in postToUpdate
         if (postToUpdate.thumbnail) {
           setThumbnail(postToUpdate.thumbnail);
         }

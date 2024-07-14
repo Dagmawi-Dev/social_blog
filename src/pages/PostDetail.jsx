@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import {Link} from 'react-router-dom'
 import PostAuthor from '../components/PostAuthor'
 import Thumbnail from '../images/blog22.jpg'
@@ -54,4 +54,4 @@ const PostDetail = () => {
   )
 }
 
-export default PostDetail
+export default PostDetail */

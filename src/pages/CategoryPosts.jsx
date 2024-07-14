@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { DUMMY_POSTS } from '../data'
 import { useState } from 'react'
 import PostItem from '../components/PostItem'
@@ -24,4 +24,4 @@ const CategoryPosts = () => {
   )
 }
 
-export default CategoryPosts
+export default CategoryPosts */

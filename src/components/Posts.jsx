@@ -5,7 +5,7 @@ import { DUMMY_POSTS } from '../data';
 
 const Posts = () => {
   const { category } = useParams();
-  const collection_posts = [...DUMMY_POSTS, ...(JSON.parse(localStorage.getItem('posts')) || [])];
+  const collection_posts = [/* ...DUMMY_POSTS, */ ...(JSON.parse(localStorage.getItem('posts')) || [])];
   const [posts, setPosts] = useState(collection_posts);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(posts);
