@@ -6,7 +6,7 @@ const Logout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
-    navigate('/'); // Redirect to the login page
+    navigate('/');
     window.location.reload()
   };
 
