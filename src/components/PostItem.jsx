@@ -4,7 +4,6 @@ import PostAuthor from './PostAuthor';
 
 const PostItem = ({ postID, category, title, description, author, thumbnail }) => {
     console.log(author)
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')).name
     const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
     const [comment, setComment] = useState('');
@@ -33,7 +32,7 @@ const PostItem = ({ postID, category, title, description, author, thumbnail }) =
             const newComment = {
                 id: comments.length + 1, // Example: Generate unique ID
                 text: comment,
-                author: currentUser, // Use the author prop
+                author: author, // Use the author prop
             };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
