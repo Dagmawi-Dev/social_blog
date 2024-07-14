@@ -34,7 +34,7 @@ const POST_CATEGORIES = [
   'Uncategorized',
   'Weather',
 ];
-
+// The main functional component.
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Uncategorized');
@@ -43,20 +43,21 @@ const CreatePost = () => {
   const [thumbnailPreview, setThumbnailPreview] = useState(null);
   const currentUser  = JSON.parse(localStorage.getItem('currentUser'))
 
+  //Handles form submission.
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Example: Remove HTML tags from description
     const sanitizedDescription = description.replace(/<\/?[^>]+(>|$)/g, '');
 
+    //Constructs a new post object.
     const newPost = {
-      id: new Date().getTime().toString(),
       thumbnail: thumbnailPreview, // Use the URL for the thumbnail
       category: category,
       title: title,
       author: currentUser.name,
-      desc: sanitizedDescription, // Use sanitizedDescription here
-      authorID: currentUser.authorID, // Example authorID, replace with actual user ID or username
+      desc: sanitizedDescription, 
+      authorID: currentUser.authorID, 
     };
 
     const existingPosts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -72,6 +73,8 @@ const CreatePost = () => {
     alert('Post created successfully!');
   };
 
+
+  //Handles changes to the file input for the thumbnail.
   const handleThumbnailChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -84,6 +87,7 @@ const CreatePost = () => {
   };
 
   return (
+    // JSX structure of the component. with inputs for the title, category, description, and thumbnail.
     <section className="create-post">
       <div className="container">
         <h2>Create Post</h2>
@@ -102,6 +106,7 @@ const CreatePost = () => {
             onChange={(e) => setCategory(e.target.value)}
             required
           >
+            {/* Maps through the POST_CATEGORIES array to create an option element for each category. */}
             {POST_CATEGORIES.map((cat) => (
               <option key={cat}>{cat}</option>
             ))}
