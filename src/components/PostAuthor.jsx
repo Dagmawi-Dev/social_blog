@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '../images/avatar1.jpg';
+import { IoPersonSharp } from "react-icons/io5";
 
 const PostAuthor = ({ author }) => {
   return (
@@ -9,7 +10,7 @@ const PostAuthor = ({ author }) => {
         <img src={Avatar} alt="" />
       </div>
       <div className="post__Author-details">
-        <h5>By: {author}</h5>
+        <h5>By: {<IoPersonSharp className="hom"/>}</h5>
       </div>
     </div>
   );

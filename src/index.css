@@ -41,7 +41,12 @@ body{
   line-height: 1.6;
   color: var(--color-gray-700);
 }
-
+.home{
+  font-size: 2.5rem;
+}
+.hom{
+  font-size: 1rem;
+}
 a{
   color: var(--color-gray-700);
   text-decoration: none;

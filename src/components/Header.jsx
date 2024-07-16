@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { HiBars3 } from "react-icons/hi2";
 import { MdOutlineClose } from "react-icons/md";
 import Logout from '../pages/Logout';
+import { IoHome } from "react-icons/io5"
 
 const Header = ({ posts }) => {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -24,7 +25,7 @@ const Header = ({ posts }) => {
     <nav>
       <div className="container nav__container">
         <Link to="/" className='nav__logo' onClick={closeNavHandler}>
-          <img src={Logo} alt='NavBar Logo' />
+        <IoHome className = "home"/>
         </Link>
        
         {isNavShowing && (
