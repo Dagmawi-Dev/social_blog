@@ -136,14 +136,6 @@ section{
   color: var(--color-white);
 }
 
-.btn:hover{
-  background-color: var(--color-gray-900);
-  color: var(--color-white);
-}
-
-
-
-
 
 
 
@@ -230,10 +222,7 @@ footer{
   border-radius: var(--radius-2);
   transition: var(--transition);
 }
-.footer__categories a:hover{
-  background: var(--color-white);
-  color: var(--color-gray-900);
-}
+
 
 .footer__copyright{
   text-align: center;
@@ -252,6 +241,7 @@ footer{
   margin-top: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .like-btn {
@@ -264,9 +254,7 @@ footer{
   transition: background-color 0.3s ease;
 }
 
-.like-btn:hover {
-  background-color: var(--color-primary-dark);
-}
+
 
 .comment-form {
   display: flex;
@@ -292,9 +280,7 @@ footer{
   transition: background-color 0.3s ease;
 }
 
-.comment-btn:hover {
-  background-color: var(--color-primary-dark);
-}
+
 
 .post {
   background-color: var(--color-white);
@@ -340,9 +326,6 @@ footer{
   transition: background-color 0.3s ease;
 }
 
-.like-btn:hover {
-  background-color: var(--color-primary-dark);
-}
 
 .post__comments {
   margin-top: 1.5rem;
@@ -395,9 +378,7 @@ footer{
   transition: background-color 0.3s ease;
 }
 
-.comment-btn:hover {
-  background-color: var(--color-primary-dark);
-}
+
 
 
 /*  */
@@ -416,9 +397,7 @@ footer{
   cursor: default;
 }
 
-.post:hover{
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
-}
+
 
 .post__thumbnail{
   border-radius: var(--radius-3);
@@ -560,9 +539,6 @@ input, select, textarea{
   transition: var(--transition);
 }
 
-.author:hover{
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.07);
-}
 
 .author__avatar{
   width: 5rem;

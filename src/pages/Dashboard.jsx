@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Dashboard = () => {
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  const dum = JSON.parse(localStorage.getItem('posts'));
-  const usher = dum.filter((d) => d.authorID === currentUser.authorID);
-  const [posts, setPosts] = useState(usher);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    const userPosts = storedPosts.filter(post => post.authorID === currentUser.authorID);
+    setPosts(userPosts);
+  }, [currentUser]);
+
+  const handleDelete = (postID) => {
+    let storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+    storedPosts = storedPosts.filter(post => post.id !== postID);
+    localStorage.setItem('posts', JSON.stringify(storedPosts));
+    localStorage.removeItem(`post_${postID}_comments`);
+    setPosts(storedPosts);
+  };
 
   return (
     <section className="dashboard">
@@ -24,7 +35,7 @@ const Dashboard = () => {
                 <div className="dashboard__post-actions">
                   <Link to={`/posts/${post.id}`} className="btn sm">View</Link>
                   <Link to={`/posts/${post.id}/edit`} className="btn sm primary">Edit</Link>
-                  <Link to={`/posts/${post.id}/delete`} className="btn sm danger">Delete</Link>
+                  <button onClick={() => handleDelete(post.id)} className="btn sm danger">Delete</button>
                 </div>
               </article>
             );

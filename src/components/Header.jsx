@@ -32,7 +32,7 @@ const Header = ({ posts }) => {
           <ul className="nav__menu">
             {currentUser ? (
               <>
-                <li><Link to="/profile/sdfsdf" onClick={closeNavHandler}>{currentUser.name}</Link></li>
+                <li><Link to="/profile/myprofile" onClick={closeNavHandler}>{currentUser.name}</Link></li>
                 <li><Link to="/create" onClick={closeNavHandler}>Create Post</Link></li>
                 <li><Logout /></li>
               </>

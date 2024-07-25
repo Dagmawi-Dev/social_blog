@@ -4,6 +4,9 @@ import PostAuthor from './PostAuthor';
 
 const PostItem = ({ postID, category, title, description, author, thumbnail }) => {
     console.log(author)
+    const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = currentUserData?.name ?? 'Guest';
+    console.log(currentUser)
     const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
     const [comment, setComment] = useState('');
@@ -25,6 +28,7 @@ const PostItem = ({ postID, category, title, description, author, thumbnail }) =
     const handleCommentChange = (e) => {
         setComment(e.target.value);
     };
+   
 
     const handleSubmitComment = (e) => {
         e.preventDefault();
@@ -32,7 +36,7 @@ const PostItem = ({ postID, category, title, description, author, thumbnail }) =
             const newComment = {
                 id: comments.length + 1, // Example: Generate unique ID
                 text: comment,
-                author: author, // Use the author prop
+                author: currentUser, // Use the author prop
             };
             const updatedComments = [...comments, newComment];
             setComments(updatedComments);
@@ -57,8 +61,9 @@ const PostItem = ({ postID, category, title, description, author, thumbnail }) =
                 </div>
                 <div className="post__actions">
                     <button className="btn like-btn" onClick={handleLike}>
-                        {liked ? 'Liked' : 'Like'}
+                         {liked ? 'Liked' : 'Like'}
                     </button>
+
                 </div>
                 <div className="post__comments">
                     <h4>Comments</h4>
