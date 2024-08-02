@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Avatar from '../images/avatar5.jpg'
 import { FaRegEdit } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
+import { IoPersonSharp } from "react-icons/io5";
 /* import { useState } from 'react'; */
 
 const UserProfile = () => {
@@ -25,7 +26,7 @@ const UserProfile = () => {
         <div className="profile__details">
           <div className="avatar__wrapper">
             <div className="profile__avatar">
-              <img src={avatar} alt="" />
+              <IoPersonSharp className='ho'/>
             </div>
             <form className='avatar__form'>
               <input type="file" name='avatar' id='avatar' onChange={e => setAvatar(e.target.files[0])} accept='png, jpg, jpeg'/>
@@ -38,7 +39,7 @@ const UserProfile = () => {
           <h1>{currentUser.name}</h1>
           {/*  */}
           <form className="form profile__form">
-            <p className="form__error-message">This is error message</p>
+            {/* <p className="form__error-message">This is error message</p> */}
             <input type="text" placeholder='Full Name' value={name} onChange={e => setName(e.target.value)}/>
             <input type="email" placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
             <input type="password" placeholder='Current password' value={currentPassword} onChange={e => setCurrentPassword(e.target.value)}/>
