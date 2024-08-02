@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import PostAuthor from './PostAuthor';
 
 const PostItem = ({ postID, category, title, description, author, thumbnail }) => {
-    console.log(author)
+    
     const currentUserData = JSON.parse(localStorage.getItem('currentUser'));
     const currentUser = currentUserData?.name ?? 'Guest';
-    console.log(currentUser)
+    
     const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
     const [comment, setComment] = useState('');

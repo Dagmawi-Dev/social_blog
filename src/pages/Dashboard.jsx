@@ -33,7 +33,7 @@ const Dashboard = () => {
                   <h5>{post.title}</h5>
                 </div>
                 <div className="dashboard__post-actions">
-                  <Link to={`/posts/${post.id}`} className="btn sm">View</Link>
+                  {/* <Link to={`/posts/${post.id}`} className="btn sm">View</Link> */}
                   <Link to={`/posts/${post.id}/edit`} className="btn sm primary">Edit</Link>
                   <button onClick={() => handleDelete(post.id)} className="btn sm danger">Delete</button>
                 </div>
