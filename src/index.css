@@ -32,7 +32,6 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 body{
@@ -44,9 +43,6 @@ body{
 }
 .home{
   font-size: 2.5rem;
-}
-.ho{
-  font-size: 11rem;
 }
 .hom{
   font-size: 1rem;
@@ -646,6 +642,9 @@ input, select, textarea{
   gap: 2rem;
   width: 100%;
   align-items: center;
+}
+.ho{
+  font-size: 11rem;
 }
 
 .dashboard__post-thumbnail{
